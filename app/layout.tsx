@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Navigation from "@/app/componets/navigation"
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,7 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="p-10 bg-black text-white text-xl">
+          <Navigation/>
+        </header>
         {children}
+        <footer  className="p-10 bg-black text-white text-center">
+          Created by Santino Giordnao
+        </footer>
       </body>
     </html>
   );
