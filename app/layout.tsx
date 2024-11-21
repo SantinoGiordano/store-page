@@ -3,6 +3,17 @@ import localFont from "next/font/local";
 import Navigation from "@/app/componets/navigation";
 import "./globals.css";
 
+const montereyFont = localFont({
+
+  src: [
+    {
+      path: './fonts/MontereyFLF.ttf',
+      weight:'400',
+      style: 'normal'
+    }
+  ]
+})
+
 const myfont = localFont({
   src: [
     {
@@ -36,7 +47,7 @@ export default function RootLayout({
         {/* className= 'p-10 bg-black text-white text-xl' */}
           <Navigation />
         </header>
-        <div className={myfont.className}>
+        <div className={montereyFont.className}>
         {children}
         </div>
         <footer className="p-10 bg-black text-white text-center">

@@ -7,7 +7,7 @@ export default async function Text() {
 
   return (
     <ul>
-      <div className="">
+      <div className=''>
       {posts.map((post) => (
         <li key={post.id}>{post.title}</li>
       ))}
