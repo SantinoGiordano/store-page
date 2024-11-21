@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navigation from "@/app/componets/navigation"
+import Navigation from "@/app/componets/navigation";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const myfont = localFont({
+  src: [
+    {
+      path: "./fonts/BlackOpsOne-Regular.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ]
+})
+
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,14 +31,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="p-10 bg-black text-white text-xl">
-          <Navigation/>
+      <body className="">
+        <header className={`p-10 bg-black text-white text-xl ${myfont.className}`} >
+        {/* className= 'p-10 bg-black text-white text-xl' */}
+          <Navigation />
         </header>
+        <div className={myfont.className}>
         {children}
-        <footer  className="p-10 bg-black text-white text-center">
+        </div>
+        <footer className="p-10 bg-black text-white text-center">
           Created by Santino Giordnao
         </footer>
       </body>
